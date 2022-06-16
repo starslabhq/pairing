@@ -1,6 +1,6 @@
 #[cfg(all(feature = "asm", target_arch = "x86_64"))]
 use super::assembly::assembly_field;
-use super::common::common_field1;
+use super::common::common_field2;
 use super::LegendreSymbol;
 use crate::arithmetic::{adc, mac, sbb, BaseExt, FieldExt, Group};
 use core::convert::TryInto;
@@ -67,7 +67,7 @@ const ZETA: Fq = Fq::from_raw([0, 0, 0, 0]);
 
 impl_binops_additive!(Fq, Fq);
 impl_binops_multiplicative!(Fq, Fq);
-common_field1!(
+common_field2!(
     Fq,
     MODULUS,
     INV,
