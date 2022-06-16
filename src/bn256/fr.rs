@@ -140,6 +140,10 @@ impl ff::Field for Fr {
         Self::one()
     }
 
+    fn char() -> Self {
+        Self::char()
+    }
+
     fn is_zero(&self) -> Choice {
         self.ct_is_zero()
     }
