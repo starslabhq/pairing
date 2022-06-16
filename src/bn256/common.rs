@@ -531,4 +531,40 @@ macro_rules! common_field {
     };
 }
 
+macro_rules! common_field_mod_fr {
+    ($field:ident) => {
+        impl $field {
+            /// Returns zero, the additive identity.
+            #[inline]
+            pub const fn char() -> $field {
+                $field([
+                    0x43e1f593f0000001,
+                    0x2833e84879b97091,
+                    0xb85045b68181585d,
+                    0x30644e72e131a029,
+                ])
+            }
+        }
+    }
+}
+
+macro_rules! common_field_mod_fq {
+    ($field:ident) => {
+        impl $field {
+            /// Returns zero, the additive identity.
+            #[inline]
+            pub const fn char() -> $field {
+                $field([
+                    0x3c208c16d87cfd47,
+                    0x97816a916871ca8d,
+                    0xb85045b68181585d,
+                    0x30644e72e131a029,
+                ])
+            }
+        }
+    }
+}
+
 pub(crate) use common_field;
+pub(crate) use common_field_mod_fr;
+pub(crate) use common_field_mod_fq;

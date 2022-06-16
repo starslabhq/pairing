@@ -1,6 +1,6 @@
 #[cfg(all(feature = "asm", target_arch = "x86_64"))]
 use super::assembly::assembly_field;
-use super::common::common_field;
+use super::common::{common_field, common_field_mod_fr};
 use super::LegendreSymbol;
 use crate::arithmetic::{adc, mac, sbb, BaseExt, FieldExt, Group};
 use core::convert::TryInto;
@@ -109,6 +109,8 @@ common_field!(
     ZETA
 );
 
+common_field_mod_fr!(Fr);
+
 impl Fr {
     pub fn legendre(&self) -> LegendreSymbol {
         unimplemented!()
@@ -138,6 +140,10 @@ impl ff::Field for Fr {
 
     fn one() -> Self {
         Self::one()
+    }
+
+    fn char() -> Self { 
+        Self::char() 
     }
 
     fn is_zero(&self) -> Choice {

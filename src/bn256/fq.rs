@@ -1,6 +1,6 @@
 #[cfg(all(feature = "asm", target_arch = "x86_64"))]
 use super::assembly::assembly_field;
-use super::common::common_field;
+use super::common::{common_field, common_field_mod_fq};
 use super::LegendreSymbol;
 use crate::arithmetic::{adc, mac, sbb, BaseExt, FieldExt, Group};
 use core::convert::TryInto;
@@ -77,6 +77,7 @@ common_field!(
     DELTA,
     ZETA
 );
+common_field_mod_fq!(Fq);
 
 impl Fq {
     pub const fn size() -> usize {
@@ -167,6 +168,10 @@ impl ff::Field for Fq {
 
     fn one() -> Self {
         Self::one()
+    }
+
+    fn char() -> Self {
+        Self::char()
     }
 
     fn is_zero(&self) -> Choice {
