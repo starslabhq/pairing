@@ -20,8 +20,8 @@ ark-std = { version = "0.3", features = ["print-trace"] }
 
 [dependencies]
 subtle = "2.4"
-ff = "0.11"
-group = "0.11"
+ff = { git = "https://github.com/starslabhq/ff", branch = "v0.11.1Char" }
+group = { git = "https://github.com/starslabhq/group", branch = "v0.11.0ff" }
 # pairing = "0.20"
 static_assertions = "1.1.0"
 rand = "0.8"

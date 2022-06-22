@@ -265,6 +265,10 @@ impl ff::PrimeField for Fq {
         Choice::from(self.to_repr()[0] & 1)
     }
 
+    fn char() -> Self {
+        MODULUS
+    }
+
     fn multiplicative_generator() -> Self {
         unimplemented!()
     }

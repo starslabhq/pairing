@@ -227,6 +227,10 @@ impl ff::PrimeField for Fr {
         Choice::from(self.to_repr()[0] & 1)
     }
 
+    fn char() -> Self {
+        MODULUS
+    }
+
     fn multiplicative_generator() -> Self {
         GENERATOR
     }
