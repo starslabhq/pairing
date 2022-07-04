@@ -29,7 +29,7 @@ rand_core = { version = "0.6", default-features = false }
 ec-gpu = { version = "0.1.0", optional = true }
 
 [features]
-default = []
+default = ["gpu"]
 asm = []
 prefetch = []
 gpu = ["ec-gpu"]
