@@ -395,6 +395,9 @@ impl Field for Fq6 {
             c2: Fq2::zero(),
         }
     }
+    fn char() -> Self {
+        todo!()
+    }
 
     fn is_zero(&self) -> Choice {
         self.c0.is_zero() & self.c1.is_zero()

@@ -292,7 +292,9 @@ impl Field for Fq12 {
             c1: Fq6::zero(),
         }
     }
-
+    fn char() -> Self {
+        todo!()
+    }
     fn is_zero(&self) -> Choice {
         self.c0.is_zero() & self.c1.is_zero()
     }

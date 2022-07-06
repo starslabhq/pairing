@@ -1,9 +1,9 @@
 #[cfg(all(feature = "asm", target_arch = "x86_64"))]
 use super::assembly::assembly_field;
 use super::common::common_field;
-use super::LegendreSymbol;
 #[cfg(feature = "gpu")]
 use super::engine::u64_to_u32;
+use super::LegendreSymbol;
 use crate::arithmetic::{adc, mac, sbb, BaseExt, FieldExt, Group};
 use core::convert::TryInto;
 use core::fmt;
@@ -169,6 +169,10 @@ impl ff::Field for Fq {
 
     fn one() -> Self {
         Self::one()
+    }
+
+    fn char() -> Self {
+        MODULUS
     }
 
     fn is_zero(&self) -> Choice {

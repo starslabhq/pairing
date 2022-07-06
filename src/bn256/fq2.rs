@@ -321,6 +321,9 @@ impl Field for Fq2 {
         }
     }
 
+    fn char() -> Self {
+        todo!()
+    }
     fn is_zero(&self) -> Choice {
         self.c0.is_zero() & self.c1.is_zero()
     }
